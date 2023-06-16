@@ -1,1 +1,3 @@
 link: https://github.com/JeanChara/eda_practica_03.git
+Integrantes : Carrasco Choque Arles Melvin 
+Chara Condori Jean Carlo 
