@@ -6,6 +6,8 @@ public class PriorityQueueHeap<T extends Comparable<T>> {
     }
 
 public void enqueue(T item,int prioridad) {
+    heap.insert(item);
+    //llama al metodo de la clase heap
     }
     public T dequeue() {
     }
@@ -14,7 +16,7 @@ public void enqueue(T item,int prioridad) {
     public T back() {
     }
     public boolean isEmpty() {
-        
+
         return heap.isEmpty();
     }
 }
