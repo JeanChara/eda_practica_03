@@ -2,7 +2,7 @@
 import java.util.*;
 // import exception
 
-public class Heap <T> {
+public class Heap <T extends Comparable <T>> {
     ArrayList<T> heapList;
     public Heap (){
         heapList = new ArrayList<T>();
