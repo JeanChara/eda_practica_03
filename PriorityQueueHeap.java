@@ -5,3 +5,16 @@ public class PriorityQueueHeap<T extends Comparable<T>> {
         heap = new Heap<>();
     }
 
+public void enqueue(T item,int prioridad) {
+    }
+    public T dequeue() {
+    }
+    public T front() {
+    }
+    public T back() {
+    }
+    public boolean isEmpty() {
+        
+        return heap.isEmpty();
+    }
+}
