@@ -7,7 +7,7 @@ public class Heap <T> {
     public Heap (){
         heapList = new ArrayList<T>();
     }
-    
+
     public void insert(T item) {
         heapList.add(item);
         heapUp(heapList.size()-1);
@@ -21,7 +21,7 @@ public class Heap <T> {
 
         return null;//
     }
-    public void heapUp(int index){
+    private void heapUp(int index){
         int indexPadre = (index-1)/2; // formula 
 
         // recorremos y comparamos los heap siempre y cuando halla mas de 1
@@ -32,7 +32,7 @@ public class Heap <T> {
         }
 
     }
-    public void intercambio(int i, int j){
+    private void intercambio(int i, int j){
         T aux = heapList.get(i);
         heapList.set(i, heapList.get(j));
         heapList.set(j, aux)
