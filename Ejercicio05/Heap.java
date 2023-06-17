@@ -15,7 +15,7 @@ public class Heap <T extends Comparable <T>> {
     public T peek(){
         return heapList.get(0);
     }
-    public T remove() {
+    public T remove() throws ExceptionNoFound{
         if (isEmpty()) {
             throw new ExceptionNoFound("No hay elementos en heap");
         }
