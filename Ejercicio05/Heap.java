@@ -68,6 +68,18 @@ public class Heap <T extends Comparable <T>> {
     }
     return heapList.get(0);
 }
+    public T getMin() throws ExceptionNoFound {
+    if (isEmpty()) {
+        throw new ExceptionNoFound("No hay elementos en heap");
+    }
+    T min = heapList.get(0);
+    for (int i = 1; i < heapList.size(); i++) {
+        if (heapList.get(i).compareTo(min) < 0) {
+            min = heapList.get(i);
+        }
+    }
+    return min;
+}
 
     public boolean isEmpty(){
         return heapList.isEmpty();
