@@ -62,6 +62,12 @@ public class Heap <T extends Comparable <T>> {
         heapList.set(i, heapList.get(j));
         heapList.set(j, aux);
     }
+    public T getMax() throws ExceptionNoFound {
+    if (isEmpty()) {
+        throw new ExceptionNoFound("No hay elementos en heap");
+    }
+    return heapList.get(0);
+}
 
     public boolean isEmpty(){
         return heapList.isEmpty();
