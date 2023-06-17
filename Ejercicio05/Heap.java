@@ -19,10 +19,13 @@ public class Heap <T extends Comparable <T>> {
         if (isEmpty()) {
             throw new ExceptionNoFound("No hay elementos en heap");
         }
+        T datoAuxMayor = peek();
+        int indexFinal = heapList.size()-1;
+        heapList.set(0,heapList.get(indexFinal)); //intercambio
+        heapList.remove(indexFinal);
+        heapDown(0);
 
-        //
-
-        return null;//
+        return datoAuxMayor;
     }
     private void heapUp(int index){
         int indexPadre = (index-1)/2; // formula 
