@@ -10,7 +10,7 @@ public class Heap <T extends Comparable <T>> {
 
     public void insert(T item) {
         heapList.add(item);
-        heapUp(heapList.size()-1);
+        heapifyUp(heapList.size()-1);
     }
     public T peek(){
         return heapList.get(0);
@@ -23,11 +23,11 @@ public class Heap <T extends Comparable <T>> {
         int indexFinal = heapList.size()-1;
         heapList.set(0,heapList.get(indexFinal)); //intercambio
         heapList.remove(indexFinal);
-        heapDown(0);
+        heapifyDown(0);
 
         return datoAuxMayor;
     }
-    private void heapUp(int index){
+    private void heapifyUp(int index){
         int indexPadre = (index-1)/2; // formula 
 
         // recorremos y comparamos los heap siempre y cuando halla mas de 1
@@ -38,7 +38,7 @@ public class Heap <T extends Comparable <T>> {
         }
 
     }
-    private void headDown(int index){
+    private void heapifyDown(int index){
         int indexIzquierdo = 2 * index + 1;
         int indexDerecho = 2 * index + 2;
         int mayorIndex = index;
@@ -48,19 +48,19 @@ public class Heap <T extends Comparable <T>> {
             mayorIndex = indexIzquierdo;// si es asi, reemplazamos el index
         }
 
-        if (rightChildIndex < heapList.size() && heapList.get(indexDerecho).compareTo(heapList.get(mayorIndex)) > 0) {
+        if (indexDerecho < heapList.size() && heapList.get(indexDerecho).compareTo(heapList.get(mayorIndex)) > 0) {
             mayorIndex = indexDerecho;
         }
 
         if (mayorIndex != index) {
-            swap(index, mayorIndex); // intercambiamos lugares 
+            intercambio(index, mayorIndex); // intercambiamos lugares 
             heapifyDown(mayorIndex); // hasta que ninguno sea mayor que el elemento o que sea una hoja
         }
     }
     private void intercambio(int i, int j){
         T aux = heapList.get(i);
         heapList.set(i, heapList.get(j));
-        heapList.set(j, aux)
+        heapList.set(j, aux);
     }
 
     public boolean isEmpty(){
