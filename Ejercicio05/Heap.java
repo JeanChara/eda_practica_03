@@ -1,6 +1,6 @@
 
 import java.util.*;
-// import exception
+import myExceptions.ExceptionNoFound;
 
 public class Heap <T extends Comparable <T>> {
     ArrayList<T> heapList;
