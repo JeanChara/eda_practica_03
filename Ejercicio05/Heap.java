@@ -80,6 +80,19 @@ public class Heap <T extends Comparable <T>> {
     }
     return min;
 }
+public int getSize() {
+        return heapList.size();
+    }
+ArrayList<T> getArray() {
+    	return heapList;
+    }
+public T get(int index) {
+        if (index < 0 || index >= heapList.size()) {
+            throw new IndexOutOfBoundsException("Index is out of bounds");
+        }
+
+        return heapList.get(index);
+    }
 
     public boolean isEmpty(){
         return heapList.isEmpty();
